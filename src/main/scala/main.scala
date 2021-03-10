@@ -9,7 +9,7 @@ import spinal.lib.com.uart._
 object GenerateTop extends App {
   new SpinalConfig(
     defaultClockDomainFrequency = FixedFrequency(50 MHz)
-  ).generateSystemVerilog(new TopLevel)
+  ).generateVerilog(new TopLevel)
   /*val prj = new QuartusProject(
         "/home/devel/SpinalKeyboardtest/tmp/",
         //"F:/intelFPGA_lite/20.1/quartus/bin64/",
@@ -21,7 +21,7 @@ object GenerateTop extends App {
 object GenerateIP extends App {
   new SpinalConfig(
     defaultClockDomainFrequency = FixedFrequency(100 MHz)
-  ).generateSystemVerilog(new LedMatrix)
+  ).generateVerilog(new LedMatrix)
 }
 
 object Test extends App {
@@ -36,7 +36,7 @@ object Test extends App {
   new SpinalConfig(
     targetDirectory = "/home/devel/SpinalKeyboardtest/tmp/",
     defaultClockDomainFrequency = FixedFrequency(50 MHz)
-  ).generateSystemVerilog(Top())
+  ).generateVerilog(Top())
 
 //  println(QuartusFlow(
 //    quartusPath="F:/intelFPGA_lite/20.1/quartus/bin64/",
