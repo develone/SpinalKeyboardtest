@@ -132,3 +132,45 @@ Multiple main classes detected, select one to run:
  [7] mylib.MyTopLevelVhdl
 
  3 Enter 
+Made the following changes to src/main/scala/main.scala
+Now many of the errors I was getting are not occurring.
+
+-import spinal.lib.eda.altera._
++//import spinal.lib.eda.altera._
+ 
+ object GenerateTop extends App {
+   new SpinalConfig(
+     defaultClockDomainFrequency = FixedFrequency(50 MHz)
+   ).generateSystemVerilog(new TopLevel)
+-  val prj = new QuartusProject(
+-        "F:/intelFPGA_lite/20.1/quartus/bin64/",
++  /*val prj = new QuartusProject(
++        "/home/devel/SpinalKeyboardtest/tmp/",
++        //"F:/intelFPGA_lite/20.1/quartus/bin64/",
+         "../")
+   prj.compile()
+-  prj.program()
++  prj.program()*/
+
+Multiple main classes detected, select one to run:
+
+ [1] GenerateIP
+ [2] GenerateTop
+ [3] Testinalkeyboardtest / Compile / compileOutputs 0s
+ [4] mylib.MyTopLevelSimt / Compile / mainClass 0s
+ [5] mylib.MyTopLevelVerilogCompile / packageBin / mappings 0s
+ [6] mylib.MyTopLevelVerilogWithCustomConfig
+ [7] mylib.MyTopLevelVhdl
+
+
+
+[info] running (fork) GenerateTop 
+[info] [Runtime] SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+[info] [Runtime] JVM max memory : 946.0MiB
+[info] [Runtime] Current date : 2021.03.10 13:43:13
+[info] [Progress] at 0.000 : Elaborate components
+[info] [Progress] at 1.634 : Checks and transforms
+[info] [Progress] at 3.280 : Generate Verilog
+[info] [Warning] 243 signals were pruned. You can call printPruned on the backend report to get more informations.
+[info] [Done] at 6.230
+

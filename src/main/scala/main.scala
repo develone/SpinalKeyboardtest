@@ -4,17 +4,18 @@ import spinal.lib._
 import spinal.lib.bus.avalon._
 import spinal.lib.bus.regif._
 import spinal.lib.com.uart._
-import spinal.lib.eda.altera._
+//import spinal.lib.eda.altera._
 
 object GenerateTop extends App {
   new SpinalConfig(
     defaultClockDomainFrequency = FixedFrequency(50 MHz)
   ).generateSystemVerilog(new TopLevel)
-  val prj = new QuartusProject(
-        "F:/intelFPGA_lite/20.1/quartus/bin64/",
+  /*val prj = new QuartusProject(
+        "/home/devel/SpinalKeyboardtest/tmp/",
+        //"F:/intelFPGA_lite/20.1/quartus/bin64/",
         "../")
   prj.compile()
-  prj.program()
+  prj.program()*/
 }
 
 object GenerateIP extends App {
@@ -33,7 +34,7 @@ object Test extends App {
   }
 
   new SpinalConfig(
-    targetDirectory = "../tmp/",
+    targetDirectory = "/home/devel/SpinalKeyboardtest/tmp/",
     defaultClockDomainFrequency = FixedFrequency(50 MHz)
   ).generateSystemVerilog(Top())
 
