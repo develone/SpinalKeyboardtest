@@ -1,0 +1,127 @@
+git clone git@github.com:develone/SpinalKeyboardtest.git
+cd SpinalKeyboardtest/
+unzip SpinalTemplateSbt-master.zip
+cd SpinalTemplateSbt-master
+mkdir src/main/scala/keyboard
+cp ~/Keyboard/104/SpinalHDL/src/main/scala/*  main.scala to src/main/scala/keyboard
+~/SpinalKeyboardtest $ sbt run
+Multiple main classes detected, select one to run:
+
+ [1] GenerateIP
+ [2] GenerateTop
+ [3] Testinalkeyboardtest / Compile / compileOutputs 0s
+ [4] mylib.MyTopLevelSimt / Compile / packageBin / mappings 0s
+ [5] mylib.MyTopLevelVerilogCompile / mainClass 0s
+ [6] mylib.MyTopLevelVerilogWithCustomConfig
+ [7] mylib.MyTopLevelVhdl
+
+ 1 Enter 
+// Generator : SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+// Component : LedMatrix
+// Git hash  : 5acbd9f3d9638b5afe04f469e519496a7d4ba3c3
+
+
+
+module LedMatrix (
+  output reg [34:0]   io_col,
+  output     [5:0]    io_row,
+  input               bus_write,
+  input      [6:0]    bus_address,
+  input      [31:0]   bus_writeData,
+  input               clk,
+  input               reset
+);
+
+~/SpinalKeyboardtest $ sbt run
+Enter number: 2 Enter
+
+[info] running (fork) GenerateTop 
+[info] [Runtime] SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+[info] [Runtime] JVM max memory : 946.0MiB
+[info] [Runtime] Current date : 2021.03.10 09:21:48
+[info] [Progress] at 0.000 : Elaborate components
+[info] [Progress] at 1.704 : Checks and transforms
+[info] [Progress] at 3.380 : Generate Verilog
+[info] [Warning] 243 signals were pruned. You can call printPruned on the backend report to get more informations.
+[info] [Done] at 6.440
+[info] Invalid path!
+[info] Invalid path!
+[info] Invalid path!
+[info] Invalid path!
+[info] Invalid path!
+[info] Invalid path!
+[info] Invalid path!
+[info] Invalid path!
+[info] F:/intelFPGA_lite/20.1/quartus/bin64/quartus_sh --flow compile /home/devel/SpinalKeyboardtest/../yosys/examples/intel/DE2i-150/quartus_compile/de2i.qpf
+[error] Exception in thread "main" java.io.IOException: Cannot run program "F:/intelFPGA_lite/20.1/quartus/bin64/quartus_sh": error=2, No such file or directory
+[error] 	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+[error] 	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+[error] 	at scala.sys.process.ProcessBuilderImpl$Simple.run(ProcessBuilderImpl.scala:69)
+[error] 	at scala.sys.process.ProcessBuilderImpl$AbstractBuilder.run(ProcessBuilderImpl.scala:98)
+[error] 	at scala.sys.process.ProcessBuilderImpl$AbstractBuilder.$bang(ProcessBuilderImpl.scala:112)
+[error] 	at spinal.lib.DoCmd$.doCmd(Misc.scala:62)
+[error] 	at spinal.lib.eda.altera.QuartusProject.compile(QuartusFlow.scala:124)
+[error] 	at GenerateTop$.delayedEndpoint$GenerateTop$1(main.scala:16)
+[error] 	at GenerateTop$delayedInit$body.apply(main.scala:9)
+[error] 	at scala.Function0$class.apply$mcV$sp(Function0.scala:34)
+[error] 	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+[error] 	at scala.App$$anonfun$main$1.apply(App.scala:76)
+[error] 	at scala.App$$anonfun$main$1.apply(App.scala:76)
+[error] 	at scala.collection.immutable.List.foreach(List.scala:392)
+[error] 	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:35)
+[error] 	at scala.App$class.main(App.scala:76)
+[error] 	at GenerateTop$.main(main.scala:9)
+[error] 	at GenerateTop.main(main.scala)
+[error] Caused by: java.io.IOException: error=2, No such file or directory
+[error] 	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+[error] 	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+[error] 	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+[error] 	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+[error] 	... 17 more
+[error] Nonzero exit code returned from runner: 1
+[error] (Compile / run) Nonzero exit code returned from runner: 1
+[error] Total time: 102 s (01:42), completed Mar 10, 2021, 9:22:24 AM
+
+// Generator : SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+// Component : TopLevel
+// Git hash  : 5acbd9f3d9638b5afe04f469e519496a7d4ba3c3
+
+module TopLevel (
+  input               KEY_Fn,
+  input               CLK_50,
+  input      [20:0]   COL,
+  output     [5:0]    LED_A,
+  output     [5:0]    ROW,
+  output     [34:0]   LED_K,
+  output              TXD,
+  output              LED_R6,
+   inout              PS2_CLK,
+   inout              PS2_DAT,
+  output              flash_dclk,
+  output              flash_sce,
+  output              flash_sdo,
+  input               flash_data0
+);
+
+
+[info] running (fork) Test 
+[info] [Runtime] SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+[info] [Runtime] JVM max memory : 946.0MiB
+[info] [Runtime] Current date : 2021.03.10 09:27:16
+[info] [Progress] at 0.000 : Elaborate components
+[info] [Progress] at 0.341 : Checks and transforms
+[info] [Progress] at 0.550 : Generate Verilog
+[info] [Warning] 11 signals were pruned. You can call printPruned on the backend report to get more informations.
+
+~/SpinalKeyboardtest $ sbt run
+Multiple main classes detected, select one to run:
+
+ [1] GenerateIP
+ [2] GenerateTop
+ [3] Testinalkeyboardtest / Compile / compileOutputs 0s
+ [4] mylib.MyTopLevelSimt / Compile / packageBin / mappings 0s
+ [5] mylib.MyTopLevelVerilogCompile / mainClass 0s
+ [6] mylib.MyTopLevelVerilogWithCustomConfig
+ [7] mylib.MyTopLevelVhdl
+
+ 3 Enter 
