@@ -1,0 +1,478 @@
+[info] running (fork) spinal.lib.com.axi.MasterTopLevelVerilog 
+[info] [Runtime] SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+[info] [Runtime] JVM max memory : 946.0MiB
+[info] [Runtime] Current date : 2021.03.10 16:13:15
+[info] [Progress] at 0.000 : Elaborate components
+[info] [Progress] at 1.262 : Checks and transforms
+[info] **********************************************************************************************
+[info] [Warning] Elaboration failed (28 errors).
+[info]           Spinal will restart with scala trace to help you to find the problem.
+[info] **********************************************************************************************
+[info] [Progress] at 1.473 : Elaborate components
+[info] [Progress] at 1.736 : Checks and transforms
+[error] Exception in thread "main" spinal.core.SpinalExit: 
+[error]  
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_valid : in Bool) is driven by (toplevel/io_zqaxi_readOnly_ar_valid :  Bool), but isn't accessible in the toplevel component.
+[error]     spinal.lib.Stream.arbitrationFrom(Stream.scala:272)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:232)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_addr : in UInt[32 bits]) is driven by (toplevel/??? :  UInt[32 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:236)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_id : in UInt[4 bits]) is driven by (toplevel/??? :  UInt[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:237)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_region : in Bits[4 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_region :  Bits[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:238)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_len : in UInt[8 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_len :  UInt[8 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:239)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_size : in UInt[3 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_size :  UInt[3 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:240)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_burst : in Bits[2 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_burst :  Bits[2 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:241)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_lock : in Bits[1 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_lock :  Bits[1 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:242)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_cache : in Bits[4 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_cache :  Bits[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:243)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_qos : in Bits[4 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_qos :  Bits[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:244)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_ar_payload_prot : in Bits[3 bits]) is driven by (toplevel/io_zqaxi_readOnly_ar_payload_prot :  Bits[3 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:246)
+[error]     spinal.lib.bus.amba4.axi.Axi4Ar$StreamPimper.drive(Axi4Channel.scala:265)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:16)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_r_ready : in Bool) is driven by (toplevel/io_zqaxi_readOnly_r_ready :  Bool), but isn't accessible in the toplevel component.
+[error]     spinal.lib.Stream.arbitrationFrom(Stream.scala:273)
+[error]     spinal.lib.bus.amba4.axi.Axi4R$StreamPimper.drive(Axi4Channel.scala:317)
+[error]     spinal.lib.bus.amba4.axi.Axi4ReadOnly.$greater$greater(Axi4ReadOnly.scala:17)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:40)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_valid : in Bool) is driven by (toplevel/io_zqaxi_writeOnly_aw_valid :  Bool), but isn't accessible in the toplevel component.
+[error]     spinal.lib.Stream.arbitrationFrom(Stream.scala:272)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:232)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_addr : in UInt[32 bits]) is driven by (toplevel/??? :  UInt[32 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:236)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_id : in UInt[4 bits]) is driven by (toplevel/??? :  UInt[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:237)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_region : in Bits[4 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_region :  Bits[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:238)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_len : in UInt[8 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_len :  UInt[8 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:239)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_size : in UInt[3 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_size :  UInt[3 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:240)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_burst : in Bits[2 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_burst :  Bits[2 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:241)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_lock : in Bits[1 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_lock :  Bits[1 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:242)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_cache : in Bits[4 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_cache :  Bits[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:243)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_qos : in Bits[4 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_qos :  Bits[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:244)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_aw_payload_prot : in Bits[3 bits]) is driven by (toplevel/io_zqaxi_writeOnly_aw_payload_prot :  Bits[3 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveAx(Axi4Channel.scala:246)
+[error]     spinal.lib.bus.amba4.axi.Axi4Aw$StreamPimper.drive(Axi4Channel.scala:256)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:20)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_w_valid : in Bool) is driven by (toplevel/io_zqaxi_writeOnly_w_valid :  Bool), but isn't accessible in the toplevel component.
+[error]     spinal.lib.Stream.arbitrationFrom(Stream.scala:272)
+[error]     spinal.lib.bus.amba4.axi.Axi4W$StreamPimper.drive(Axi4Channel.scala:289)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:21)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_w_payload_data : in Bits[32 bits]) is driven by (toplevel/io_zqaxi_writeOnly_w_payload_data :  Bits[32 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4W$StreamPimper.drive(Axi4Channel.scala:290)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:21)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_w_payload_strb : in Bits[4 bits]) is driven by (toplevel/io_zqaxi_writeOnly_w_payload_strb :  Bits[4 bits]), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4W$StreamPimper.drive(Axi4Channel.scala:291)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:21)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_w_payload_last : in Bool) is driven by (toplevel/io_zqaxi_writeOnly_w_payload_last :  Bool), but isn't accessible in the toplevel component.
+[error]     spinal.lib.bus.amba4.axi.Axi4Priv$.driveWeak(Axi4Channel.scala:227)
+[error]     spinal.lib.bus.amba4.axi.Axi4W$StreamPimper.drive(Axi4Channel.scala:293)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:21)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] HIERARCHY VIOLATION : (toplevel/io_zqaxi_b_ready : in Bool) is driven by (toplevel/io_zqaxi_writeOnly_b_ready :  Bool), but isn't accessible in the toplevel component.
+[error]     spinal.lib.Stream.arbitrationFrom(Stream.scala:273)
+[error]     spinal.lib.bus.amba4.axi.Axi4B$StreamPimper.drive(Axi4Channel.scala:303)
+[error]     spinal.lib.bus.amba4.axi.Axi4WriteOnly.$greater$greater(Axi4WriteOnly.scala:22)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlave(Axi4Crossbar.scala:41)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory$$anonfun$addSlaves$1.apply(Axi4Crossbar.scala:54)
+[error]     spinal.lib.bus.amba4.axi.Axi4CrossbarFactory.addSlaves(Axi4Crossbar.scala:54)
+[error]     spinal.lib.com.axi.MasterTopLevel.<init>(MasterTopLevel.scala:46)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$$anonfun$main$1.apply(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error]     spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] Design's errors are listed above.
+[error] SpinalHDL compiler exit stack : 
+[error] 	at spinal.core.SpinalExit$.apply(Misc.scala:400)
+[error] 	at spinal.core.SpinalError$.apply(Misc.scala:451)
+[error] 	at spinal.core.internals.PhaseContext.checkPendingErrors(Phase.scala:174)
+[error] 	at spinal.core.internals.PhaseContext.doPhase(Phase.scala:190)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2$$anonfun$apply$117.apply(Phase.scala:2442)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2$$anonfun$apply$117.apply(Phase.scala:2440)
+[error] 	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+[error] 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2.apply(Phase.scala:2440)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2.apply(Phase.scala:2379)
+[error] 	at spinal.core.ScopeProperty$.sandbox(ScopeProperty.scala:31)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$.singleShot(Phase.scala:2379)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$.apply(Phase.scala:2374)
+[error] 	at spinal.core.Spinal$.apply(Spinal.scala:353)
+[error] 	at spinal.core.SpinalConfig.generate(Spinal.scala:158)
+[error] 	at spinal.core.SpinalVerilog$.apply(Spinal.scala:371)
+[error] 	at spinal.lib.com.axi.MasterTopLevelVerilog$.main(MasterTopLevel.scala:69)
+[error] 	at spinal.lib.com.axi.MasterTopLevelVerilog.main(MasterTopLevel.scala)
+[error] Nonzero exit code returned from runner: 1
+[error] (Compile / run) Nonzero exit code returned from runner: 1
+[error] Total time: 136 s (02:16), completed Mar 10, 2021, 4:13:17 PM
