@@ -1,3 +1,10 @@
+@volatile-static provided the following steps
+I always do following steps to create a new workspace: 
+1. download zip of SpinalTemplateSbt 
+2. make sure sbt version matched 
+3. copy sources to src/main/scala/* 
+4. run sbt
+
 git clone git@github.com:develone/SpinalKeyboardtest.git
 cd SpinalKeyboardtest/
 unzip SpinalTemplateSbt-master.zip
