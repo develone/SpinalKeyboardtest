@@ -1,3 +1,7 @@
+build.properties  plugins.sbt These 2 files are needed when build a new repo
+bf2551ca719beb3e1e9efd512c1c736a  SpinalTemplateSbt-master.zip
+SpinalTemplateSbt-master.zip031021
+
 @volatile-static provided the following steps
 I always do following steps to create a new workspace: 
 1. download zip of SpinalTemplateSbt 
@@ -5,7 +9,7 @@ I always do following steps to create a new workspace:
 3. copy sources to src/main/scala/* 
 4. run sbt
 
-git clone git@github.com:develone/SpinalKeyboardtest.git
+git clone gi t@github.com:develone/SpinalKeyboardtest.git
 cd SpinalKeyboardtest/
 unzip SpinalTemplateSbt-master.zip
 cd SpinalTemplateSbt-master
