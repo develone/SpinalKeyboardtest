@@ -93,7 +93,9 @@ module MasterTopLevel (
   wire       [1:0]    io_m_axi_readOnly_decoder_io_input_r_payload_resp;
   wire                io_m_axi_readOnly_decoder_io_input_r_payload_last;
   wire                io_m_axi_readOnly_decoder_io_outputs_0_ar_valid;
+  /* verilator lint_off UNUSED */
   wire       [31:0]   io_m_axi_readOnly_decoder_io_outputs_0_ar_payload_addr;
+  /* verilator lint_off UNUSED */
   wire                io_m_axi_readOnly_decoder_io_outputs_0_r_ready;
   wire                io_m_axi_readOnly_decoder_io_outputs_1_ar_valid;
   wire       [31:0]   io_m_axi_readOnly_decoder_io_outputs_1_ar_payload_addr;
@@ -103,7 +105,9 @@ module MasterTopLevel (
   wire                io_m_axi_writeOnly_decoder_io_input_b_valid;
   wire       [1:0]    io_m_axi_writeOnly_decoder_io_input_b_payload_resp;
   wire                io_m_axi_writeOnly_decoder_io_outputs_0_aw_valid;
+  /* verilator lint_off UNUSED */
   wire       [31:0]   io_m_axi_writeOnly_decoder_io_outputs_0_aw_payload_addr;
+  /* verilator lint_off UNUSED */
   wire                io_m_axi_writeOnly_decoder_io_outputs_0_w_valid;
   wire       [31:0]   io_m_axi_writeOnly_decoder_io_outputs_0_w_payload_data;
   wire       [3:0]    io_m_axi_writeOnly_decoder_io_outputs_0_w_payload_strb;
@@ -119,7 +123,9 @@ module MasterTopLevel (
   wire                ram_io_axi_arbiter_io_readInputs_0_ar_ready;
   wire                ram_io_axi_arbiter_io_readInputs_0_r_valid;
   wire       [31:0]   ram_io_axi_arbiter_io_readInputs_0_r_payload_data;
+  /* verilator lint_off UNUSED */
   wire       [3:0]    ram_io_axi_arbiter_io_readInputs_0_r_payload_id;
+  /* verilator lint_off UNUSED */
   wire       [1:0]    ram_io_axi_arbiter_io_readInputs_0_r_payload_resp;
   wire                ram_io_axi_arbiter_io_readInputs_0_r_payload_last;
   wire                ram_io_axi_arbiter_io_writeInputs_0_aw_ready;
@@ -626,8 +632,9 @@ module MasterTopLevel (
 
 
 endmodule
-
+/* verilator lint_off DECLFILENAME */
 module Axi4SharedArbiter (
+/* verilator lint_off DECLFILENAME */
   input               io_readInputs_0_ar_valid,
   output              io_readInputs_0_ar_ready,
   input      [11:0]   io_readInputs_0_ar_payload_addr,
@@ -1923,7 +1930,9 @@ module Axi4ReadOnlyErrorSlave (
   input      [31:0]   io_axi_ar_payload_addr,
   output              io_axi_r_valid,
   input               io_axi_r_ready,
+  /* verilator lint_off UNDRIVEN */
   output     [31:0]   io_axi_r_payload_data,
+  /* verilator lint_off UNDRIVEN */
   output     [1:0]    io_axi_r_payload_resp,
   output              io_axi_r_payload_last,
   input               clk,
