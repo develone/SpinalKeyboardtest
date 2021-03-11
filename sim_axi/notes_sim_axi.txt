@@ -1,0 +1,2 @@
+verilator -Wall --trace   -cc MasterTopLevel.v --exe --build sim_main.cpp
+
