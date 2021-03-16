@@ -1,0 +1,98 @@
+Trying to use @volatile-static examples to create package catboard & catmain.scala
+Created a folder src/main/scala/catboard with pll.scala,ResetController.scala, and TopLevel.scala
+Now using package catboard
+Created a file src/main/scala/catmain.scala 
+< import keyboard._
+---
+> import catboard._
+9c9
+< object GenerateTop extends App {
+---
+> object CatGenerateTop extends App {
+20a21
+> /*
+25a27
+> */
+26a29
+> /*
+40c43
+< 
+---
+> */
+49c52
+< }
+---
+> //}
+
+sbt run
+
+Multiple main classes detected, select one to run:
+
+ [1] CatGenerateTop
+ [2] GenerateIP
+ [3] GenerateTop
+ [4] Test
+ [5] mylib.MyTopLevelSimt / Compile / packageBin / mappings 0s
+ [6] mylib.MyTopLevelVerilogCompile / mainClass 0s
+ [7] mylib.MyTopLevelVerilogWithCustomConfig
+ [8] mylib.MyTopLevelVhdl
+ [9] spinal.lib.com.axi.MasterTopLevelVerilog
+
+[info] running (fork) CatGenerateTop 
+[info] [Runtime] SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+[info] [Runtime] JVM max memory : 944.0MiB
+[info] [Runtime] Current date : 2021.03.16 05:27:53
+[info] [Progress] at 0.000 : Elaborate components
+[info] [Progress] at 0.446 : Checks and transforms
+[info] **********************************************************************************************
+[info] [Warning] Elaboration failed (1 error).
+[info]           Spinal will restart with scala trace to help you to find the problem.
+[info] **********************************************************************************************
+[info] [Progress] at 0.707 : Elaborate components
+[info] [Progress] at 0.734 : Checks and transforms
+[error] Exception in thread "main" spinal.core.SpinalExit: 
+[error]  
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] NO DRIVER ON (toplevel/TXD : out Bool), defined at
+[error]     catboard.TopLevel$$anon$1.<init>(TopLevel.scala:11)
+[error]     catboard.TopLevel.<init>(TopLevel.scala:7)
+[error]     CatGenerateTop$$anonfun$1.apply(catmain.scala:12)
+[error]     CatGenerateTop$$anonfun$1.apply(catmain.scala:12)
+[error]     CatGenerateTop$.delayedEndpoint$CatGenerateTop$1(catmain.scala:12)
+[error]     CatGenerateTop$delayedInit$body.apply(catmain.scala:9)
+[error]     CatGenerateTop$.main(catmain.scala:9)
+[error]     CatGenerateTop.main(catmain.scala)
+[error] ********************************************************************************
+[error] ********************************************************************************
+[error] Design's errors are listed above.
+[error] SpinalHDL compiler exit stack : 
+[error] 	at spinal.core.SpinalExit$.apply(Misc.scala:400)
+[error] 	at spinal.core.SpinalError$.apply(Misc.scala:451)
+[error] 	at spinal.core.internals.PhaseContext.checkPendingErrors(Phase.scala:174)
+[error] 	at spinal.core.internals.PhaseContext.doPhase(Phase.scala:190)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2$$anonfun$apply$117.apply(Phase.scala:2442)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2$$anonfun$apply$117.apply(Phase.scala:2440)
+[error] 	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+[error] 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2.apply(Phase.scala:2440)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$$anonfun$singleShot$2.apply(Phase.scala:2379)
+[error] 	at spinal.core.ScopeProperty$.sandbox(ScopeProperty.scala:31)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$.singleShot(Phase.scala:2379)
+[error] 	at spinal.core.internals.SpinalVerilogBoot$.apply(Phase.scala:2374)
+[error] 	at spinal.core.Spinal$.apply(Spinal.scala:353)
+[error] 	at spinal.core.SpinalConfig.generateVerilog(Spinal.scala:160)
+[error] 	at CatGenerateTop$.delayedEndpoint$CatGenerateTop$1(catmain.scala:12)
+[error] 	at CatGenerateTop$delayedInit$body.apply(catmain.scala:9)
+[error] 	at scala.Function0$class.apply$mcV$sp(Function0.scala:34)
+[error] 	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+[error] 	at scala.App$$anonfun$main$1.apply(App.scala:76)
+[error] 	at scala.App$$anonfun$main$1.apply(App.scala:76)
+[error] 	at scala.collection.immutable.List.foreach(List.scala:392)
+[error] 	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:35)
+[error] 	at scala.App$class.main(App.scala:76)
+[error] 	at CatGenerateTop$.main(catmain.scala:9)
+[error] 	at CatGenerateTop.main(catmain.scala)
+[error] Nonzero exit code returned from runner: 1
+[error] (Compile / run) Nonzero exit code returned from runner: 1
+[error] Total time: 807 s (13:27), completed Mar 16, 2021, 5:27:54 AM
