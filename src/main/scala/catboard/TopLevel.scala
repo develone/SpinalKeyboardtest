@@ -8,7 +8,7 @@ class TopLevel() extends Component {
     noIoPrefix()
     val RXD, CLK_50 = in Bool
      
-    val TXD = out Bool
+    //val TXD = out Bool
      
   }
 
