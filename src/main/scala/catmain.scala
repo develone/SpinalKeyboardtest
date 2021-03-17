@@ -9,7 +9,7 @@ import spinal.lib.com.uart._
 object CatGenerateTop extends App {
   new SpinalConfig(
     defaultClockDomainFrequency = FixedFrequency(50 MHz)
-  ).generateVerilog(new TopLevel)
+  ).generateVerilog(new CatTopLevel)
   /*val prj = new QuartusProject(
         "/home/devel/SpinalKeyboardtest/tmp/",
         //"F:/intelFPGA_lite/20.1/quartus/bin64/",

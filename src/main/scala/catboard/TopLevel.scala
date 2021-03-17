@@ -3,7 +3,7 @@ package catboard
 import spinal.core._
 import spinal.lib.ResetCtrl
 
-class TopLevel() extends Component {
+class CatTopLevel() extends Component {
   val io = new Bundle() {
     noIoPrefix()
     val RXD, CLK_100 = in Bool
@@ -12,22 +12,22 @@ class TopLevel() extends Component {
      
   }
 
-  val uut:pll =  pll()
-  uut.REFERENCECLK <> io.CLK_100
-  uut.BYPASS <> B(0,1 bit)
-  uut.RESETB <> B(1,1 bit)
+  val pll100: pll = pll()
+  pll100.REFERENCECLK <> io.CLK_100
+  pll100.BYPASS <> B(0,1 bit)
+  pll100.RESETB <> B(1,1 bit)
   
   val rstCtrl: ResetController = ResetController()
   //rstCtrl.io.clock <> io.CLK_50
-  rstCtrl.io.clock <> uut.PLLOUTCORE 
+  rstCtrl.io.clock <> pll100.PLLOUTCORE 
 
   val globalClockDomain = new ClockDomain(
-    clock = uut.PLLOUTCORE,
+    clock = pll100.PLLOUTCORE,
     reset = False.allowOverride,
     frequency = FixedFrequency(40 MHz)
   )
   ResetCtrl.asyncAssertSyncDeassertDrive(
-    input = rstCtrl.io.globalReset || !uut.LOCK,
+    input = rstCtrl.io.globalReset || !pll100.LOCK,
     clockDomain = globalClockDomain,
     outputPolarity = HIGH
   )
