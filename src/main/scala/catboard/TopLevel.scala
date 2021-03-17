@@ -12,22 +12,22 @@ class TopLevel() extends Component {
      
   }
 
-  val SB_PLL40_CORE = new SB_PLL40_CORE(FEEDBACK_PATH = "SIMPLE")
-  SB_PLL40_CORE.REFERENCECLK <> io.CLK_100
-  SB_PLL40_CORE.BYPASS <> B(0,1 bit)
-  SB_PLL40_CORE.RESETB <> B(1,1 bit)
+  val uut:pll =  pll()
+  uut.REFERENCECLK <> io.CLK_100
+  uut.BYPASS <> B(0,1 bit)
+  uut.RESETB <> B(1,1 bit)
   
   val rstCtrl: ResetController = ResetController()
   //rstCtrl.io.clock <> io.CLK_50
-  rstCtrl.io.clock <> SB_PLL40_CORE.PLLOUTCORE 
+  rstCtrl.io.clock <> uut.PLLOUTCORE 
 
   val globalClockDomain = new ClockDomain(
-    clock = SB_PLL40_CORE.PLLOUTCORE,
+    clock = uut.PLLOUTCORE,
     reset = False.allowOverride,
     frequency = FixedFrequency(40 MHz)
   )
   ResetCtrl.asyncAssertSyncDeassertDrive(
-    input = rstCtrl.io.globalReset || !SB_PLL40_CORE.LOCK,
+    input = rstCtrl.io.globalReset || !uut.LOCK,
     clockDomain = globalClockDomain,
     outputPolarity = HIGH
   )

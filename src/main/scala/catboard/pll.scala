@@ -2,7 +2,7 @@ package catboard
 
 import spinal.core._
 
-case class SB_PLL40_CORE(FEEDBACK_PATH:String) extends BlackBox {
+case class pll() extends BlackBox {
   val REFERENCECLK: Bool = in Bool
   val PLLOUTCORE, LOCK = out Bool
   val BYPASS = in Bits()

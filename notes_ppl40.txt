@@ -2,8 +2,8 @@ These notes are for creating  pll for Ice40 HX8K.
 
 icepll is part of icestorm.
 
-devel@mypi3-20:~/testbuilds/catzip/rtl/catzip $ icepll -i 100 -o 40 -f pll.v -m
-***********************40.txt*********************** 
+devel@mypi3-20:~/testbuilds/catzip/rtl/catzip $ icepll -i 100 -o 40 -f SB_PLL40_CORE.v -m
+***********************command output*********************** 
 
 F_PLLIN:   100.000 MHz (given)
 F_PLLOUT:   40.000 MHz (requested)
@@ -20,8 +20,9 @@ DIVQ:  4 (3'b100)
 FILTER_RANGE: 2 (3'b010)
 
 PLL configuration written to: pll.v
+***********************command output***********************
 
-***********************pll.v***********************
+***********************SB_PLL40_CORE.v***********************
 /**
  * PLL configuration
  *
@@ -55,7 +56,8 @@ SB_PLL40_CORE #(
 		);
 
 endmodule
-***********************pll.v***********************
+
+***********************SB_PLL40_CORE.v***********************
 
 ***********************catzip/rtl/toplevel.v***********************
 'ifdef VERILATOR
@@ -89,12 +91,12 @@ This is what is generated with pll.scala & TopLevel.scala
        	
   wire       [0:0]    _zz_2;
   wire       [0:0]    _zz_3;       	
-  SB_PLL40_CORE pll100 (
-    .REFERENCECLK    (CLK_100            ), //i
-    .PLLOUTCORE      (pll100_PLLOUTCORE  ), //o
-    .LOCK            (pll100_LOCK        ), //o
-    .BYPASS          (_zz_2              ), //i
-    .RESETB          (_zz_3              )  //i
+  pll uut (
+    .REFERENCECLK    (CLK_100         ), //i
+    .PLLOUTCORE      (uut_PLLOUTCORE  ), //o
+    .locked          (uut_locked      ), //o
+    .BYPASS          (_zz_2           ), //i
+    .RESETB          (_zz_3           )  //i
   );
   
   assign _zz_2 = 1'b0;
