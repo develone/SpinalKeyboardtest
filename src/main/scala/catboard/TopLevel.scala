@@ -6,26 +6,28 @@ import spinal.lib.ResetCtrl
 class TopLevel() extends Component {
   val io = new Bundle() {
     noIoPrefix()
-    val RXD, CLK_50 = in Bool
+    val RXD, CLK_100 = in Bool
      
     //val TXD = out Bool
      
   }
 
-  val pll100: pll = pll()
-  pll100.inclk0 <> io.CLK_50
-
+  val SB_PLL40_CORE = new SB_PLL40_CORE(FEEDBACK_PATH = "SIMPLE")
+  SB_PLL40_CORE.REFERENCECLK <> io.CLK_100
+  SB_PLL40_CORE.BYPASS <> B(0,1 bit)
+  SB_PLL40_CORE.RESETB <> B(1,1 bit)
+  
   val rstCtrl: ResetController = ResetController()
-  rstCtrl.io.clock <> io.CLK_50
-   
+  //rstCtrl.io.clock <> io.CLK_50
+  rstCtrl.io.clock <> SB_PLL40_CORE.PLLOUTCORE 
 
   val globalClockDomain = new ClockDomain(
-    clock = io.CLK_50,
+    clock = SB_PLL40_CORE.PLLOUTCORE,
     reset = False.allowOverride,
-    frequency = FixedFrequency(50 MHz)
+    frequency = FixedFrequency(40 MHz)
   )
   ResetCtrl.asyncAssertSyncDeassertDrive(
-    input = rstCtrl.io.globalReset || !pll100.locked,
+    input = rstCtrl.io.globalReset || !SB_PLL40_CORE.LOCK,
     clockDomain = globalClockDomain,
     outputPolarity = HIGH
   )
