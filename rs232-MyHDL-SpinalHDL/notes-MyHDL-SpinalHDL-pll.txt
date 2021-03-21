@@ -1,0 +1,40 @@
+sbt "runMain testcode.toplevel_pllVerilog"
+
+cat ../toplevel_pll.v main.v > toplevel_pll.v
+
+chg main to mainrs232
+
+yosys -l simple.log -p 'synth_ice40 -abc9 -blif toplevel_pll.blif -json toplevel_pll.json' toplevel_pll.v
+=== toplevel_pll ===
+
+   Number of wires:                325
+   Number of wire bits:            532
+   Number of public wires:         325
+   Number of public wire bits:     532
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                507
+     SB_CARRY                      116
+     SB_DFFE                        73
+     SB_DFFER                       46
+     SB_DFFESR                       4
+     SB_DFFR                         4
+     SB_DFFS                         1
+     SB_DFFSR                       32
+     SB_DFFSS                        2
+     SB_LUT4                       228
+     SB_PLL40_CORE                   1
+
+nextpnr-ice40 --hx8k --pcf toplevel_pll.pcf --json toplevel_pll.json --asc toplevel_pll.asc
+
+icetime -d hx8k -c 50 toplevel_pll.asc
+// Reading input .asc file..
+// Reading 8k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 9.60 ns (104.21 MHz)
+// Checking 20.00 ns (50.00 MHz) clock constraint: PASSED.
+
+icepack toplevel_pll.asc toplevel_pll.bin
+
+-rw-r--r--  1 devel devel  135100 Mar 20 21:53 toplevel_pll.bin
