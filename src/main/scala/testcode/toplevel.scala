@@ -51,22 +51,41 @@ case class SB_PLL40_CORE() extends BlackBox {
   val BYPASS = in Bits()
   val RESETB = in Bits()
   addGeneric("FEEDBACK_PATH", "SIMPLE")
-  addGeneric("DIVR", B(2,4 bits))
-  addGeneric("DIVF", B(22,7 bits))
-  addGeneric("DIVQ", B(6,3 bits))
-  addGeneric("FILTER_RANGE", B(2,3 bits))
+  addGeneric("DIVR", B(0,4 bits))
+  addGeneric("DIVF", B(7,7 bits))
+  addGeneric("DIVQ", B(4,3 bits))
+  addGeneric("FILTER_RANGE", B(5,3 bits))
+  //addGeneric("FDA_FEEDBACK",B(15,4 bits))
+  //addGeneric("FDA_RELATIVE",B(15,4 bits))
   //addGeneric("BYPASS", B(0,1 bits))
   //addGeneric("RESETB", "RESET")
   //addGeneric("EXTFEEDBACK","()")
 }
+case class mainrs232() extends BlackBox {
+	val iClk: Bool = in Bool
+	val iRX: Bool = in Bool
+	val oTX: Bool = out Bool
+	
+}
 class toplevel_pll() extends Component {
   val io = new Bundle() {
-    val CLK_100 = in Bool
+  val CLK_100 = in Bool
+  val uartRX = in Bool
+  val uartTX = out Bool
+  
   }
   val plli: SB_PLL40_CORE = new SB_PLL40_CORE()
   plli.REFERENCECLK <> io.CLK_100
   plli.BYPASS <> B(0,1 bit)
   plli.RESETB <> B(1,1 bit)
+  
+  val mainrs232 = new mainrs232()
+  mainrs232.iClk <> plli.PLLOUTCORE
+  mainrs232.iRX <> io.uartRX
+  mainrs232.oTX <> io.uartTX
+  
+  
+  
 }
 //Generate the toplevel_pll Verilog
 object toplevel_pllVerilog {

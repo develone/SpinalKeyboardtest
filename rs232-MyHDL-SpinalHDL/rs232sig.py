@@ -1,7 +1,7 @@
 from myhdl import *
 
-Clk_f=100e6 #100 Mhz
-BAUDRATE=2e6
+Clk_f=50e6 #100 Mhz
+BAUDRATE=115200
 RX_BUFF_LEN=8
 TX_BUFF_LEN=8
 
