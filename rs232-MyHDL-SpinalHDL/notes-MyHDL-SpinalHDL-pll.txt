@@ -1,4 +1,75 @@
+03/20/21
+
+Goal: To complete the SIMPLE pll using SpinalHDL.   In addition to include a Blackbox to include main.v 
+a MyHDL modude which sends HELLOWORLD at 2MBaud.  
+
+Status as of 03/21/21: The SIMPLE pll appears to be complete, but the  HELLOWORLD at 115200 Baud is still not
+working.  main.pcf -> toplevel_pll.pcf.  Yosys, Nextpnr, icetime, and icepack are all working.
+
+
+  wire       [0:0]    _zz_1;
+  wire       [0:0]    _zz_2;
+  wire                plli_PLLOUTCORE;
+  wire                plli_LOCK;
+  wire                mainrs232_1_oTX;
+  SB_PLL40_CORE #(
+    .FEEDBACK_PATH("SIMPLE"),
+    .DELAY_ADJUSTMENT_MODE_FEEDBACK("FIXED"),
+    .DELAY_ADJUSTMENT_MODE_RELATIVE("FIXED"),
+    .PLLOUT_SELECT("GENCLK"),
+    .FDA_FEEDBACK(4'b1111),
+    .FDA_RELATIVE(4'b1111),
+    .DIVR(4'b0000),
+    .DIVQ(7'h07),
+    .DIVF(3'b100),
+    .FILTER_RANGE(3'b101) 
+  ) plli (
+    .REFERENCECLK    (io_CLK_100       ), //i
+    .PLLOUTCORE      (plli_PLLOUTCORE  ), //o
+    .LOCK            (plli_LOCK        ), //o
+    .BYPASS          (_zz_1            ), //i
+    .RESETB          (_zz_2            )  //i
+  );
+  mainrs232 mainrs232_1 (
+    .iClk    (plli_PLLOUTCORE  ), //i
+    .iRX     (io_uartRX        ), //i
+    .oTX     (mainrs232_1_oTX  )  //o
+  );
+  assign _zz_1 = 1'b0;
+  assign _zz_2 = 1'b1;
+  assign io_uartTX = mainrs232_1_oTX;
+
+
+Testing 100MHz and BAUDRATE 2e6
+
+mainwkg1.png
+
+mainwkg2.png
+
+devel@mypi3-21:~/myhdl-relook/rs232tests $ sudo config_cat main.bin
+
+mainwkg3.png
+
+~/SpinalKeyboardtest/rs232-MyHDL-SpinalHDL
+
+diff rs232sig.py ~/myhdl-relook/rs232tests/rs232sig.py
+3,4c3,4
+< Clk_f=50e6 #100 Mhz
+< BAUDRATE=115200
+---
+> Clk_f=100e6 #100 Mhz
+> BAUDRATE=2e6
+
+In main.py uncoment 
+133 #convert_main(hdl='Verilog')
+
+python main.py create main.v
+
+~/SpinalKeyboardtest/
 sbt "runMain testcode.toplevel_pllVerilog"
+
+~/SpinalKeyboardtest/rs232-MyHDL-SpinalHDL
+rm -f toplevel_pll.v
 
 cat ../toplevel_pll.v main.v > toplevel_pll.v
 
@@ -32,9 +103,12 @@ icetime -d hx8k -c 50 toplevel_pll.asc
 // Reading input .asc file..
 // Reading 8k chipdb file..
 // Creating timing netlist..
-// Timing estimate: 9.60 ns (104.21 MHz)
+// Timing estimate: 9.97 ns (100.32 MHz)
 // Checking 20.00 ns (50.00 MHz) clock constraint: PASSED.
+
 
 icepack toplevel_pll.asc toplevel_pll.bin
 
--rw-r--r--  1 devel devel  135100 Mar 20 21:53 toplevel_pll.bin
+-rw-r--r-- 1 devel devel 135100 Mar 21 06:55 toplevel_pll.bin
+
+verilator -Wall --trace   -cc toplevel_pll.v --exe --build sim_main.cpp
