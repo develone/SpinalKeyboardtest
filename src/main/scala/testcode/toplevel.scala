@@ -57,8 +57,8 @@ case class SB_PLL40_CORE() extends BlackBox {
   addGeneric("FDA_FEEDBACK",B(15,4 bits))
   addGeneric("FDA_RELATIVE",B(15,4 bits))
   addGeneric("DIVR", B(0,4 bits))
-  addGeneric("DIVQ", B(7,7 bits))
-  addGeneric("DIVF", B(4,3 bits))
+  addGeneric("DIVQ", B(4,3 bits))
+  addGeneric("DIVF", B(7,7 bits))
   
   addGeneric("FILTER_RANGE", B(5,3 bits))
   
@@ -66,7 +66,7 @@ case class SB_PLL40_CORE() extends BlackBox {
   //addGeneric("RESETB", "RESET")
   //addGeneric("EXTFEEDBACK","()")
 }
-case class mainrs232() extends BlackBox {
+case class main() extends BlackBox {
 	val iClk: Bool = in Bool
 	val iRX: Bool = in Bool
 	val oTX: Bool = out Bool
@@ -84,13 +84,10 @@ class toplevel_pll() extends Component {
   plli.BYPASS <> B(0,1 bit)
   plli.RESETB <> B(1,1 bit)
   
-  val mainrs232 = new mainrs232()
-  mainrs232.iClk <> plli.PLLOUTCORE
-  mainrs232.iRX <> io.uartRX
-  mainrs232.oTX <> io.uartTX
-  
-  
-  
+  val main = new main()
+  main.iClk <> plli.PLLOUTCORE
+  main.iRX <> io.uartRX
+  main.oTX <> io.uartTX  
 }
 //Generate the toplevel_pll Verilog
 object toplevel_pllVerilog {
