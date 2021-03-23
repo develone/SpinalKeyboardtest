@@ -44,35 +44,6 @@ import spinal.core._
   assign _zz_1 = 1'b0;
   assign _zz_2 = 1'b1;
 */
-/*
-case class SB_PLL40_CORE() extends BlackBox {
-  val REFERENCECLK: Bool = in Bool
-  val PLLOUTCORE, LOCK = out Bool
-  val BYPASS = in Bits()
-  val RESETB = in Bits()
-  addGeneric("FEEDBACK_PATH", "SIMPLE")
-  addGeneric("DELAY_ADJUSTMENT_MODE_FEEDBACK", "FIXED")
-  addGeneric("DELAY_ADJUSTMENT_MODE_RELATIVE", "FIXED")
-  addGeneric("PLLOUT_SELECT","GENCLK")
-  addGeneric("FDA_FEEDBACK",B(15,4 bits))
-  addGeneric("FDA_RELATIVE",B(15,4 bits))
-  addGeneric("DIVR", B(0,4 bits))
-  addGeneric("DIVQ", B(4,3 bits))
-  addGeneric("DIVF", B(7,7 bits))
-  
-  addGeneric("FILTER_RANGE", B(5,3 bits))
-  
-  //addGeneric("BYPASS", B(0,1 bits))
-  //addGeneric("RESETB", "RESET")
-  //addGeneric("EXTFEEDBACK","()")
-}
-case class main() extends BlackBox {
-	val iClk: Bool = in Bool
-	val iRX: Bool = in Bool
-	val oTX: Bool = out Bool
-	
-}
-*/
 class toplevel_pll() extends Component {
   val io = new Bundle() {
   val CLK_100 = in Bool
