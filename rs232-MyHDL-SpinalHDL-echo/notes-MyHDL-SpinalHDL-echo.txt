@@ -1,0 +1,134 @@
+03/23/21
+
+Goal: To complete the SIMPLE pll using SpinalHDL.   In addition to include a Blackbox to include mainecho.v 
+a MyHDL modude which will echo received characters at 2MBaud. The PLL will reduce the 100MHz and main was reduced to
+115200 Baud. 
+
+Status as of 03/23/21: The SIMPLE pll appears to be complete, but the  HELLOWORLD at 115200 Baud is now
+working.  toplevel_pll.pcf -> toplevel_echo.pcf.  Yosys, Nextpnr, icetime, and icepack are all working.
+mainecho require a active lo iRst which was provided by pwruprst.py
+
+  wire       [0:0]    _zz_1;
+  wire       [0:0]    _zz_2;
+  wire                plli_PLLOUTCORE;
+  wire                plli_LOCK;
+  wire                main_1_oTX;
+
+  SB_PLL40_CORE #(
+    .FEEDBACK_PATH("SIMPLE"),
+    .DELAY_ADJUSTMENT_MODE_FEEDBACK("FIXED"),
+    .DELAY_ADJUSTMENT_MODE_RELATIVE("FIXED"),
+    .PLLOUT_SELECT("GENCLK"),
+    .FDA_FEEDBACK(4'b1111),
+    .FDA_RELATIVE(4'b1111),
+    .DIVR(4'b0000),
+    .DIVQ(3'b100),
+    .DIVF(7'h07),
+    .FILTER_RANGE(3'b101) 
+  ) plli (
+    .REFERENCECLK    (io_CLK_100       ), //i
+    .PLLOUTCORE      (plli_PLLOUTCORE  ), //o
+    .LOCK            (plli_LOCK        ), //o
+    .BYPASS          (_zz_1            ), //i
+    .RESETB          (_zz_2            )  //i
+  );
+  main main_1 (
+    .iClk    (plli_PLLOUTCORE  ), //i
+    .iRX     (io_uartRX        ), //i
+    .oTX     (main_1_oTX       )  //o
+  );
+  assign _zz_1 = 1'b0;
+  assign _zz_2 = 1'b1;
+  assign io_uartTX = main_1_oTX;
+
+
+Testing 100MHz and BAUDRATE 2e6
+
+mainwkg1.png
+
+mainwkg2.png
+
+devel@mypi3-21:~/myhdl-relook/rs232tests $ sudo config_cat main.bin
+
+mainwkg3.png
+
+~/SpinalKeyboardtest/rs232-MyHDL-SpinalHDL
+
+diff rs232sig.py ~/myhdl-relook/rs232tests/rs232sig.py
+3,4c3,4
+< Clk_f=50e6 #100 Mhz
+< BAUDRATE=115200
+---
+> Clk_f=100e6 #100 Mhz
+> BAUDRATE=2e6
+
+~/SpinalKeyboardtest/rs232-MyHDL-SpinalHDL
+In mainecho.py uncoment 
+133 #convert_main(hdl='Verilog')
+cp mainecho.v SpinalKeyboardtest/rs232-MyHDL-SpinalHDL-echo/
+python mainecho.py create mainecho.v
+
+~/SpinalKeyboardtest/
+sbt "runMain testcode.toplevel_echoVerilog"
+
+[info] welcome to sbt 1.3.13 (Raspbian Java 11.0.9.1)
+[info] loading settings for project spinalkeyboardtest-build from plugins.sbt ...
+[info] loading project definition from /home/devel/SpinalKeyboardtest/project
+[info] loading settings for project spinalkeyboardtest from build.sbt ...
+[info] set current project to SpinalTemplateSbt (in build file:/home/devel/SpinalKeyboardtest/)
+[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
+[info] running (fork) testcode.toplevel_pllVerilog 
+[info] [Runtime] SpinalHDL v1.4.3    git head : adf552d8f500e7419fff395b7049228e4bc5de26
+[info] [Runtime] JVM max memory : 944.0MiB
+[info] [Runtime] Current date : 2021.03.22 06:27:57
+[info] [Progress] at 0.000 : Elaborate components
+[info] [Progress] at 0.361 : Checks and transforms
+[info] [Progress] at 0.605 : Generate Verilog
+[info] [Warning] 1 signals were pruned. You can call printPruned on the backend report to get more informations.
+[info] [Done] at 0.912
+[success] Total time: 7 s, completed Mar 22, 2021, 6:27:59 AM
+
+~/SpinalKeyboardtest/rs232-MyHDL-SpinalHDL-echo
+rm -f toplevel_echo.v
+
+cat ../toplevel_echo.v mainecho.v > toplevel_echo.v
+
+yosys -l simple.log -p 'synth_ice40 -abc9 -blif toplevel_echo.blif -json toplevel_echo.json' toplevel_echo.v
+=== toplevel_echo ===
+
+   Number of wires:                437
+   Number of wire bits:            732
+   Number of public wires:         437
+   Number of public wire bits:     732
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                711
+     SB_CARRY                      127
+     SB_DFF                          8
+     SB_DFFE                       137
+     SB_DFFER                       76
+     SB_DFFR                         9
+     SB_DFFS                         2
+     SB_DFFSR                       32
+     SB_DFFSS                        2
+     SB_LUT4                       317
+     SB_PLL40_CORE                   1
+
+
+nextpnr-ice40 --hx8k --pcf toplevel_echo.pcf --json toplevel_echo.json --asc toplevel_echo.asc
+
+icetime -d hx8k -c 50 toplevel_echo.asc
+// Reading input .asc file..
+// Reading 8k chipdb file..
+// Creating timing netlist..
+// Timing estimate: 9.63 ns (103.83 MHz)
+// Checking 20.00 ns (50.00 MHz) clock constraint: PASSED.
+
+
+
+icepack toplevel_echo.asc toplevel_echo.bin
+
+md5sum toplevel_echo.bin
+
+

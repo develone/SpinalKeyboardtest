@@ -44,7 +44,7 @@ import spinal.core._
   assign _zz_1 = 1'b0;
   assign _zz_2 = 1'b1;
 */
-class toplevel_pll() extends Component {
+class toplevel_echo() extends Component {
   val io = new Bundle() {
   val CLK_100 = in Bool
   val uartRX = in Bool
@@ -56,14 +56,14 @@ class toplevel_pll() extends Component {
   plli.BYPASS <> B(0,1 bit)
   plli.RESETB <> B(1,1 bit)
   
-  val main = new main()
-  main.iClk <> plli.PLLOUTCORE
-  main.iRX <> io.uartRX
-  main.oTX <> io.uartTX  
+  val mainecho = new mainecho()
+  mainecho.iClk <> plli.PLLOUTCORE
+  mainecho.iRX <> io.uartRX
+  mainecho.oTX <> io.uartTX  
 }
-//Generate the toplevel_pll Verilog
-object toplevel_pllVerilog {
+//Generate the toplevel-echo Verilog
+object toplevel_echoVerilog {
   def main(args: Array[String]) {
-    SpinalVerilog(new toplevel_pll)
+    SpinalVerilog(new toplevel_echo)
   }
 }
