@@ -44,7 +44,7 @@ import spinal.core._
   assign _zz_1 = 1'b0;
   assign _zz_2 = 1'b1;
 */
-
+/*
 case class SB_PLL40_CORE() extends BlackBox {
   val REFERENCECLK: Bool = in Bool
   val PLLOUTCORE, LOCK = out Bool
@@ -72,6 +72,7 @@ case class main() extends BlackBox {
 	val oTX: Bool = out Bool
 	
 }
+*/
 class toplevel_pll() extends Component {
   val io = new Bundle() {
   val CLK_100 = in Bool
