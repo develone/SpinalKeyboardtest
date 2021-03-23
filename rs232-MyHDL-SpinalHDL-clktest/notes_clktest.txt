@@ -24,24 +24,26 @@ cat ../toplevel_clktest.v main.v clktest.v > toplevel_clktest.v
 yosys -l simple.log -p 'synth_ice40 -abc9 -blif toplevel_clktest.blif -json toplevel_clktest.json' toplevel_clktest.v
 === toplevel_clktest ===
 
-   Number of wires:                323
-   Number of wire bits:            561
-   Number of public wires:         323
-   Number of public wire bits:     561
+   Number of wires:                365
+   Number of wire bits:            679
+   Number of public wires:         365
+   Number of public wire bits:     679
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                499
-     SB_CARRY                      116
+   Number of cells:                612
+     SB_CARRY                      151
+     SB_DFF                         33
      SB_DFFE                        73
      SB_DFFER                       46
-     SB_DFFESR                       4
+     SB_DFFESR                      10
      SB_DFFR                         4
      SB_DFFS                         1
      SB_DFFSR                       32
      SB_DFFSS                        2
-     SB_LUT4                       220
+     SB_LUT4                       259
      SB_PLL40_CORE                   1
+
 
 nextpnr-ice40 --hx8k --pcf toplevel_clktest.pcf --json toplevel_clktest.json --asc toplevel_clktest.asc
 
@@ -49,10 +51,10 @@ icetime -d hx8k -c 50 toplevel_clktest.asc
 // Reading input .asc file..
 // Reading 8k chipdb file..
 // Creating timing netlist..
-// Timing estimate: 9.85 ns (101.54 MHz)
+// Timing estimate: 9.30 ns (107.51 MHz)
 // Checking 20.00 ns (50.00 MHz) clock constraint: PASSED.
 
 
-icepack toplevel_pll.asc toplevel_pll.bin
+icepack toplevel_clktest.asc toplevel_clktest.bin
 
 md5sum toplevel_pll.bin

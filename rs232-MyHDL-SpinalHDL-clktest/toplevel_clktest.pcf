@@ -5,6 +5,6 @@ set_io io_CLK_100 C8
 set_io io_uartRX B5 
 set_io io_uartTX B3
  
-#set_io o_ledg[0] A9 	#LED1 IOT_194
-#set_io o_ledg[1] B8 	#LED2 IOT_203
+set_io io_out_ledg[0] A9 	#LED1 IOT_194
+set_io io_out_ledg[1] B8 	#LED2 IOT_203
 set_io io_out_ledr B7 	#LED3 IOT_205
